@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    practice-aframe
+  </title>
+  <meta name="description" content="practice-aframe">
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="components.js"></script>
+  <!-- aframe extras -->
+  <!-- <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script> -->
+  <!-- webcomponentsjs -->
+  <!-- <script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/v0.7.24/webcomponents-lite.min.js"></script> -->
+  <!-- LRNWebComponents -->
+  <!-- <link href="https://cdn.rawgit.com/LRNWebComponents/build/0.2.0/build/default/build.html" rel="import" /> -->
+  <!-- include ar.js for A-Frame -->
+  <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
+</head>
+
+<body>
+  <a-scene>
+    <!-- assets -->
+    <a-assets>
+      <img id="chuck" src="assets/images/cgl_square.jpg">
+    </a-assets>
+    <!-- cameras -->
+    <a-entity position="5 3 5" rotation="-30 45 0">
+      <a-camera></a-camera>
+    </a-entity>
+    <!-- lights -->
+    <a-entity light="color:#556ff0;type:directional;intensity:0.8" position="0 9 0" rotation="0 90 0"></a-entity>
+    <a-entity light="color:#ff063d;type:directional;intensity:0.8" position="9 0 0" rotation="90 0 0"></a-entity>
+    <a-entity light="color:#f38c24;type:directional;intensity:0.8" position="0 0 9" rotation="0 0 90"></a-entity>
+    <!-- plane -->
+    <a-plane color="#AAAAAA" position="0 -2 0" height="20" width="20" rotation="270 0 0" material="emissive:#AAAAAA"></a-plane>
+    <!-- objects -->
+
+    <a-entity position="0 1 -1">
+        <a-animation attribute="rotation"
+                     easing="linear" 
+                     dur="3000"
+                     fill="forwards"
+                     to="0 360 0"
+                     repeat="indefinite"></a-animation>
+        <a-box src="#chuck" width="5" height="5" depth="5"></a-box>
+      </a-entity>
+    <!-- <a-entity box position="1 1 1"></a-entity> -->
+  </a-scene>
+</body>
+
+</html>
